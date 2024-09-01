@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 
-@Service
+@Service("fakestr")
 public class FakeStoreProductService implements ProductService{
 
     @Override
@@ -24,13 +24,23 @@ public class FakeStoreProductService implements ProductService{
         return getFakeProduct(fakestoreDto);
     }
 
+    @Override
+    public Product createProduct(String name, String category, String description) {
+        return null;
+    }
+
+    @Override
+    public Product getProductWithId(long id) {
+        return null;
+    }
+
     //now we have to return the Models product type but we have the data in DTO type we have
     //to convert the DTO to product now
 
     private Product getFakeProduct(FakeStoreDto dto) {
         Product product = new Product();
-        product.setProductName(dto.getCategory());
-        product.setProductDescription(dto.getDescription());
+        product.setName(dto.getCategory());
+        product.setCategory(dto.getDescription());
         product.setDescription(dto.getTitle());
         return product;
     }
