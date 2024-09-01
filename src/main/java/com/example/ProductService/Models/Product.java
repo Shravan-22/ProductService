@@ -1,33 +1,18 @@
 package com.example.ProductService.Models;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Data;
+
+
+@Data
+@Entity
 public class Product {
-    String productName;
-    String productDescription;
-    String description;
+    @Id
+    private long id;
 
-    public String getProductName() {
-        return productName;
-    }
+    private String productName;
+    private String productDescription;
+    private String description;
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
