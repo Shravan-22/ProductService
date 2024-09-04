@@ -16,6 +16,15 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getProductById(long id) throws ProductNotFoundException {
+        /*Optional<Product> op = productRepository.findById(id);
+        if (op.isPresent()) {
+            Product product = op.get();
+            return product;
+        }
+        else{
+            return new ProductNotFoundException("product with id " + id + "is not present");
+        }*/
+        //the above code is for optional query
         return null;
     }
 

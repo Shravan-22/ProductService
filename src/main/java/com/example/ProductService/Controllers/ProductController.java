@@ -39,11 +39,11 @@ public class ProductController {
                 RequestDto.getDescription());
     }
 
-    @GetMapping("{id}")
+    /*@GetMapping("{id}")
     public ResponseEntity<Product> getProductById(@PathVariable("id") long productId) throws ProductNotFoundException {
         Product product = productserive.getProductWithId(productId);
         return ResponseEntity.ok(product);
-    }
+    }*/
 
 
 }
