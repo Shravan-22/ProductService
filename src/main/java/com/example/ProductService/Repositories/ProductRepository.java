@@ -1,6 +1,9 @@
 package com.example.ProductService.Repositories;
 
 import com.example.ProductService.Models.Product;
+import com.example.ProductService.Projection.ProductInfo;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,10 +20,13 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     // select * from products
     List<Product> findAll();
 
+    Page<Product> findAll(Pageable pageable);
+
     // Find product by Id
     // select * from products where id = {id}
 
     Product findById(long id);
+
 
     // Find all products by category
     // select * from products where category = {category}
@@ -46,4 +52,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     //when you want you wn query you can write int eh format for SQL query
     @Query(value = "select * from Products p where p.id = :id", nativeQuery = true)
     Product SelectById2(long id);
+
+    @Query(value = "select p.id, p.name, p.description from Products p where p.id = :id", nativeQuery = true)
+    ProductInfo getProductInfoById(long id);
 }

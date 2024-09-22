@@ -7,10 +7,13 @@ import com.example.ProductService.Services.ProductService;
 import com.example.ProductService.Services.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/Products")
 @RestController
@@ -45,5 +48,15 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }*/
 
+
+    //pagination
+    @GetMapping
+    public ResponseEntity<Page<Product>> getAllProducts(
+            @RequestParam(value = "pageSize", defaultValue = "20") int pageSize,
+            @RequestParam(value = "pageNum", defaultValue = "0") int pageNum
+    ) {
+        Page<Product> products = productserive.getAllProducts(pageSize, pageNum);
+        return ResponseEntity.ok(products);
+    }
 
 }
