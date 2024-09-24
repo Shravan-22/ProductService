@@ -23,6 +23,8 @@ public class ProductController {
     @Qualifier("dbImpl")
     private ProductService productserive;
 
+
+    //fakestore
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable("id") long productId) throws ProductNotFoundException {
         /*if(productId<1 || productId>20) {
