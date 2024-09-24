@@ -20,7 +20,7 @@ import java.util.List;
 public class ProductController {
     //will communicate which service class under the interface should be picked up
     @Autowired
-    @Qualifier("dbImpl")
+    @Qualifier("fakestr")
     private ProductService productserive;
 
 
