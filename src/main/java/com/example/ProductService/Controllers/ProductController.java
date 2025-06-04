@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.net.ssl.SSLEngineResult;
 import java.util.List;
 
 @RequestMapping("/Products")
@@ -60,5 +61,11 @@ public class ProductController {
         Page<Product> products = productserive.getAllProducts(pageSize, pageNum);
         return ResponseEntity.ok(products);
     }
+
+    @GetMapping
+    public ResponseEntity<?> getRequiredProducts(){
+        return new ResponseEntity<>(HttpStatus.valueOf(200));
+    }
+
 
 }
