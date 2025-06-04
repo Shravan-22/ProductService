@@ -63,7 +63,7 @@ public class ProductController {
     }
     //sampple
     @PostMapping
-    public ResponseEntity<?> getRequiredProducts(){
+    public ResponseEntity<?> updateRequiredProducts(){
         return new ResponseEntity<>(HttpStatus.valueOf(200));
     }
 
