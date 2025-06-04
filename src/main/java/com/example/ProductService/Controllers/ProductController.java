@@ -61,6 +61,11 @@ public class ProductController {
         Page<Product> products = productserive.getAllProducts(pageSize, pageNum);
         return ResponseEntity.ok(products);
     }
+    //sampple
+    @PostMapping
+    public ResponseEntity<?> getRequiredProducts(){
+        return new ResponseEntity<>(HttpStatus.valueOf(200));
+    }
 
     @GetMapping
     public ResponseEntity<?> getRequiredProducts(){
