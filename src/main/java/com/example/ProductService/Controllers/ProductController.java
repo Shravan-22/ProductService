@@ -72,5 +72,7 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.valueOf(200));
     }
 
+    //just for reference
+
 
 }
