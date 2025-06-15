@@ -73,9 +73,11 @@ public class ProductController {
     }
 
     @PutMapping
-    public ResponseEntity<?> updateRecord(){
+    public ResponseEntity<?> resetRecords(){
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
 
     //just for reference
 
