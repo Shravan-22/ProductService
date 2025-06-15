@@ -72,6 +72,11 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.valueOf(200));
     }
 
+    @PutMapping
+    public ResponseEntity<?> updateRecord(){
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     //just for reference
 
     //just for testing purpose i have created this
