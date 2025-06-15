@@ -77,6 +77,11 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PutMapping
+    public ResponseEntity<?> updateRecord(){
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 
     //just for reference
