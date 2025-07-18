@@ -83,10 +83,20 @@ public class ProductController {
     }
 
 
+    @PutMapping
+    public ResponseEntity<?> deleteRecord(){
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping
+    public ResponseEntity<?> partialRecord(){
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
     //just for reference
 
     //just for testing purpose i have created this
 
 
+    //check comments
 }
