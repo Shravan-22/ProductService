@@ -102,6 +102,5 @@ public class ProductController {
 
     //now lets see if gets updated
 
-    //I have to get mergeconflicts here
-    //pleasse check this
+    //lets see if it gets updated in check
 }
